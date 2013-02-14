@@ -1,0 +1,2 @@
+module ImageSumHelper
+end
