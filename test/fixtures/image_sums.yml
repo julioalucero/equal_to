@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  first_image: MyString
+  second_image: MyString
+  equal_to_image: MyString
+
+two:
+  first_image: MyString
+  second_image: MyString
+  equal_to_image: MyString
