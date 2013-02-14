@@ -1,6 +1,8 @@
 EqualTo::Application.routes.draw do
   get "image_sum/index"
 
+  root :to => 'image_sum#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
