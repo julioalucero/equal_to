@@ -1,8 +1,5 @@
 EqualTo::Application.routes.draw do
-  get "image_sums/create"
-
-  get "image_sums/new"
-  post "image_sums/new"
+  resources :image_sums
 
   root :to => 'image_sums#new'
 

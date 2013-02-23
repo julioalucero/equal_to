@@ -4,6 +4,12 @@ class ImageSumsController < ApplicationController
   end
 
   def create
-    binding.pry
+    @image_sum = ImageSum.new(params[:image_sum])
+
+    if @image_sum.save
+      redirect_to '/'
+    else
+      render :new
+    end
   end
 end

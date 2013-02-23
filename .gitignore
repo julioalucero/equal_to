@@ -16,3 +16,4 @@
 
 # My ignore files
 .rvmrc
+public/uploads/*

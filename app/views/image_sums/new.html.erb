@@ -1,7 +1,7 @@
 <h1>Equal To</h1>
 <h2>Sum your Images</h2>
 
-<%= form_for :image_sums_path, html: { multipart: true } do |f| %>
+<%= form_for @image_sum, html: { multipart: true } do |f| %>
 
   <% if @image_sum.errors.any? %>
     <div id='ErrorExplanation'>
@@ -17,6 +17,15 @@
 
   <%= f.label :first_image %>
   <%= f.file_field :first_image %>
+  <%= f.hidden_field :first_image %>
+
+  <%= f.label :second_image %>
+  <%= f.file_field :second_image %>
+  <%= f.hidden_field :second_image %>
+
+  <%= f.label :equal_to_image %>
+  <%= f.file_field :equal_to_image %>
+  <%= f.hidden_field :equal_to_image %>
 
   <%= f.submit 'Sum' %>
 <% end %>
