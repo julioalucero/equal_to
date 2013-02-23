@@ -5,7 +5,7 @@
 
   <% if @image_sum.errors.any? %>
     <div id='ErrorExplanation'>
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited
+      <h2><%= pluralize(@image_sum.errors.count, "error") %> prohibited
         this post from being saved:</h2>
       <ul>
       <% @image_sum.errors.full_messages.each do |msg| %>
