@@ -1,7 +1,10 @@
 EqualTo::Application.routes.draw do
-  get "image_sum/index"
+  get "image_sums/create"
 
-  root :to => 'image_sum#index'
+  get "image_sums/new"
+  post "image_sums/new"
+
+  root :to => 'image_sums#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

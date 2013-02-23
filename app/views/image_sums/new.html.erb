@@ -1,0 +1,23 @@
+<h1>Equal To</h1>
+<h2>Sum your Images</h2>
+
+<%= form_for :image_sums_path, html: { multipart: true } do |f| %>
+
+  <% if @image_sum.errors.any? %>
+    <div id='ErrorExplanation'>
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited
+        this post from being saved:</h2>
+      <ul>
+      <% @image_sum.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label :first_image %>
+  <%= f.file_field :first_image %>
+
+  <%= f.submit 'Sum' %>
+<% end %>
+
