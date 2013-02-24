@@ -7,8 +7,7 @@ class ImageSumsController < ApplicationController
     @image_sum = ImageSum.new(params[:image_sum])
 
     if @image_sum.save
-      flash[:notice] = "Share your Image."
-      redirect_to '/'
+      redirect_to '/', notice: "Share your Image."
     else
       render :new
     end

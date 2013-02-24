@@ -23,6 +23,10 @@ group :assets do
   gem 'pry'
 end
 
+group :development do
+  gem "awesome_print"
+end
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
