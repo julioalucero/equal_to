@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130214171943) do
+ActiveRecord::Schema.define(:version => 20130228022910) do
 
   create_table "image_sums", :force => true do |t|
     t.string   "first_image"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20130214171943) do
     t.string   "equal_to_image"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.string   "equal_to"
   end
 
 end
