@@ -10,6 +10,5 @@ module ImageProcessing
     end
 
     result.write result_path
-    result
   end
 end

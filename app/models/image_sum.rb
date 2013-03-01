@@ -23,10 +23,14 @@ class ImageSum < ActiveRecord::Base
     second_sum_path = 'tmp/second_sum_path.jpg'
     second_sum_geometry = '+310+100'
 
-    first_image_result  = sum_2_images(self.first_image, 'public/sumatoria.png', first_sum_path, first_sum_geometry)
-    second_image_result = sum_2_images(self.second_image, first_sum_path, second_sum_path, second_sum_geometry)
+    equal_to_sum_path = 'tmp/equal_to_path.jpg'
+    equal_to_sum_geometry = '+610+100'
 
-    self.equal_to = File.open(second_sum_path)
+    sum_2_images(self.first_image, 'public/sumatoria.png', first_sum_path, first_sum_geometry)
+    sum_2_images(self.second_image, first_sum_path, second_sum_path, second_sum_geometry)
+    sum_2_images(self.equal_to_image, second_sum_path, equal_to_sum_path, equal_to_sum_geometry)
+
+    self.equal_to = File.open(equal_to_sum_path)
     self.save!
   end
 end
