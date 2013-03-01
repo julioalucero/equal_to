@@ -1,6 +1,16 @@
-<h1>Equal To</h1>
+<%- model_class = ImageSum -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<h2>Share your Image</h2>
+<dl class="dl-horizontal">
+  <dd><%= image_tag @image_sum.equal_to.url %></dd>
+</dl>
 
-<%= image_tag @image_sum.equal_to %>
-
+<div class="form-actions">
+  <%# link_to t('.destroy', :default => t("helpers.links.destroy")),
+              image_sum_path(@image_sum),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

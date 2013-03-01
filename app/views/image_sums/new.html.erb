@@ -1,29 +1,7 @@
-<h1>Equal To</h1>
-<h2>Sum your Images</h2>
+<%- model_class = ImageSum -%>
 
-<%= form_for @image_sum, html: { multipart: true } do |f| %>
+<div class="page-header">
+  <h1>Create an Image</h1>
+</div>
 
-  <% if @image_sum.errors.any? %>
-    <div id='ErrorExplanation'>
-      <h2><%= pluralize(@image_sum.errors.count, "error") %> prohibited
-        this post from being saved:</h2>
-      <ul>
-      <% @image_sum.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <%= f.label :first_image %>
-  <%= f.file_field :first_image %>
-
-  <%= f.label :second_image %>
-  <%= f.file_field :second_image %>
-
-  <%= f.label :equal_to_image %>
-  <%= f.file_field :equal_to_image %>
-
-  <%= f.submit 'Sum' %>
-<% end %>
-
+<%= render :partial => 'form' %>
