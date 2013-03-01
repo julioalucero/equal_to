@@ -6,6 +6,7 @@ class ImageSum < ActiveRecord::Base
   mount_uploader :first_image,    ImageUploader
   mount_uploader :second_image,   ImageUploader
   mount_uploader :equal_to_image, ImageUploader
+  mount_uploader :equal_to,       EqualUploader
 
   validates :first_image, presence: true
   validates :second_image, presence: true
@@ -16,6 +17,11 @@ class ImageSum < ActiveRecord::Base
   after_create :sum_all_images
 
   def sum_all_images
-    self.sum_3_images
+    first_sum_path =  'tmp/first_sum.jpg'
+    first_image_result = sum_2_images(self.first_image, 'public/sumatoria.png', first_sum_path)
+
+    self.equal_to = File.open(first_sum_path)
+    self.save!
   end
 end
+
