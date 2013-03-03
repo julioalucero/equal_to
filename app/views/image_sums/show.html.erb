@@ -3,8 +3,8 @@
   <h1><%=t '.title', :default => model_class.model_name.human %></h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dd><%= image_tag @image_sum.equal_to.url %></dd>
-</dl>
+<%= image_tag @image_sum.equal_to.url, class: 'img-polaroid' %>
 
-<%= social_share_button_tag %>
+<div class='well'>
+  <%= social_share_button_tag %>
+</div>
