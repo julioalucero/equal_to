@@ -68,6 +68,7 @@ GEM
     mini_magick (3.5.0)
       subexec (~> 0.2.1)
     multi_json (1.6.0)
+    pg (0.14.1)
     polyglot (0.3.3)
     pry (0.9.12)
       coderay (~> 1.0.5)
@@ -140,6 +141,7 @@ DEPENDENCIES
   jquery-rails
   less-rails
   mini_magick
+  pg
   pry
   rails (= 3.2.12)
   sass-rails (~> 3.2.3)
