@@ -1,7 +1,10 @@
-<h1>Equal To</h1>
+<%- model_class = ImageSum -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<h2>Share your Image</h2>
-
-<%= image_tag @image_sum.equal_to %>
+<dl class="dl-horizontal">
+  <dd><%= image_tag @image_sum.equal_to.url %></dd>
+</dl>
 
 <%= social_share_button_tag %>

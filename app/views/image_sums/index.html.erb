@@ -1,0 +1,42 @@
+<%- model_class = ImageSum -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:first_image) %></th>
+      <th><%= model_class.human_attribute_name(:second_image) %></th>
+      <th><%= model_class.human_attribute_name(:equal_to_image) %></th>
+      <th><%= model_class.human_attribute_name(:equal_to) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @image_sums.each do |image_sum| %>
+      <tr>
+        <td><%= link_to image_sum.id, image_sum_path(image_sum) %></td>
+        <td><%= image_sum.first_image %></td>
+        <td><%= image_sum.second_image %></td>
+        <td><%= image_sum.equal_to_image %></td>
+        <td><%= image_sum.equal_to %></td>
+        <td><%=l image_sum.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_image_sum_path(image_sum), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      image_sum_path(image_sum),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_image_sum_path,
+            :class => 'btn btn-primary' %>
