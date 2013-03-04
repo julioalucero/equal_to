@@ -16,9 +16,9 @@ class ImageSum < ActiveRecord::Base
 
   after_create :sum_all_images
 
-  FIRST_GEOMETRY    = '+30+100'
-  SECOND_GEOMETRY   = '+310+100'
-  EQUAL_TO_GEOMETRY = '+610+100'
+  FIRST_GEOMETRY    =  '+30+60'
+  SECOND_GEOMETRY   = '+390+60'
+  EQUAL_TO_GEOMETRY = '+750+60'
 
   TEMPLATE_IMAGE = 'public/sumatoria.png'
 
